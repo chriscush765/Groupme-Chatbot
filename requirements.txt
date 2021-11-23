@@ -1,0 +1,3 @@
+websocket-client
+transformers
+python-dotenv
