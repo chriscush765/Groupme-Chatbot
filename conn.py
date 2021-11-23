@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 groupme_access_token = os.getenv('GROUPME_ACCESS_TOKEN')
-groupme_user_id = os.getenv('GROUPME_USER_ID')
-test_group_id = os.getenv('GROUP_ID')
+groupme_user_id = int(os.getenv('GROUPME_USER_ID'))
+test_group_id = int(os.getenv('GROUP_ID'))
 bot_id = os.getenv('BOT_ID')
 
 class MessageProcessor:
@@ -20,6 +20,8 @@ class MessageProcessor:
     thread.start()
 
   def run(self):
+
+
     message = self.message
     if len(message['attachments']) > 0:
       return # probably reply
